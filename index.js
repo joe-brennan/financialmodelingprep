@@ -2,6 +2,7 @@
 
 const commodities = require('./lib/commodities');
 const crypto = require('./lib/crypto');
+const news = require('./lib/news')
 const etf = require('./lib/etf');
 const forex = require('./lib/forex');
 const mutualfund = require('./lib/mutualfund');
@@ -15,6 +16,7 @@ module.exports = (apikey) => {
   auth.key = apikey;
 
   return {
+      news : news,
       stock: stock,
       market: market,
       forex: forex,
