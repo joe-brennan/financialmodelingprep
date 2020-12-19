@@ -88,41 +88,45 @@ search(keywords, limit = 10, exchange)      // /search?{opts}
 
 ### ETF
 Accessed through `fmp.etf.{method_name}
+
 ```js
-list()                                                                      // /symbol/available-etfs
-quote(stock = 'all')*                                                       // /quote
-history(stock, { start_date, end_date, data_type, limit } = {})*            // /historical-price-full/etf/{ticker}?{opts}
-dividend_history(stock, { start_date, end_date, data_type, limit } = {})*   // /historical-price-full/stock_dividend/{ticker}?{opts}
-split_history(stock, { start_date, end_date, data_type, limit } = {})*      // /historical-price-full/stock_split/{ticker}?{opts}
+stocknews()                                                                      // /symbol/available-etfs
+quote(stock = 'all') *                                                       // /quote
+history(stock, {start_date, end_date, data_type, limit} = {}) *            // /historical-price-full/etf/{ticker}?{opts}
+dividend_history(stock, {start_date, end_date, data_type, limit} = {}) *   // /historical-price-full/stock_dividend/{ticker}?{opts}
+split_history(stock, {start_date, end_date, data_type, limit} = {}) *      // /historical-price-full/stock_split/{ticker}?{opts}
 ```
 \* The `stock` parameter can either be pased as a string or an array of market tickers. These tickers can be found either by running search based on corporation name or through the `list` function
 
 ### Mutual Funds
 Accessed through `fmp.mutualfund.{method_name}`
+
 ```js
-list()                                                                      // /symbol/available-mutual-funds
-quote(stock = 'all')*                                                       // /quote
-history(stock, { start_date, end_date, data_type, limit } = {})*            // /historical-price-full/mutual_fund/{ticker}?{opts}
-dividend_history(stock, { start_date, end_date, data_type, limit } = {})*   // /historical-price-full/stock_dividend/{ticker}?{opts}
-split_history(stock, { start_date, end_date, data_type, limit } = {})*      // /historical-price-full/stock_split/{ticker}?{opts}
+stocknews()                                                                      // /symbol/available-mutual-funds
+quote(stock = 'all') *                                                       // /quote
+history(stock, {start_date, end_date, data_type, limit} = {}) *            // /historical-price-full/mutual_fund/{ticker}?{opts}
+dividend_history(stock, {start_date, end_date, data_type, limit} = {}) *   // /historical-price-full/stock_dividend/{ticker}?{opts}
+split_history(stock, {start_date, end_date, data_type, limit} = {}) *      // /historical-price-full/stock_split/{ticker}?{opts}
 ```
 \* The `stock` parameter can either be pased as a string or an array of market tickers. These tickers can be found either by running search based on corporation name or through the `list` function
 
 ### Cryptocurrency
 Accessed through `fmp.crypto.{method_name}`
+
 ```js
-list()                                                                      // /symbol/available-cryptocurrencies
-quote(stock = 'all')*                                                       // /quote
-history(stock, { start_date, end_date, data_type, limit } = {})*            // /historical-price-full/crypto/{ticker}?{opts}
+stocknews()                                                                      // /symbol/available-cryptocurrencies
+quote(stock = 'all') *                                                       // /quote
+history(stock, {start_date, end_date, data_type, limit} = {}) *            // /historical-price-full/crypto/{ticker}?{opts}
 ```
 \* The `stock` parameter can either be pased as a string or an array of market tickers. Also, the parameter appends `USD` to the crypto ticker passed to provide the value in US dollars so if you need to query data in a different currency I would suggest using the [forex](###Forex) command and manually convert it to the desired currency.
 
 ### Commodities
 Accessed through `fmp.commodities.{method_name}`
+
 ```js
-list()                                                                      // /symbol/available-commodities
-quote(stock = 'all')*                                                       // /quote
-history(stock, { start_date, end_date, data_type, limit } = {})*            // /historical-price-full/commodity/{ticker}?{opts}
+stocknews()                                                                      // /symbol/available-commodities
+quote(stock = 'all') *                                                       // /quote
+history(stock, {start_date, end_date, data_type, limit} = {}) *            // /historical-price-full/commodity/{ticker}?{opts}
 ```
 \* The `stock` parameter can either be pased as a string or an array of market tickers. These tickers can be found either by running search based on corporation name or through the `list` function
 
