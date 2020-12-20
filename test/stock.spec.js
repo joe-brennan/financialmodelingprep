@@ -37,6 +37,20 @@ describe('.stock', () => {
                 })
         });
 
+
+        it('Apple stock should return valid data in past 10 minutes', (done) => {
+            chai.request('https://financialmodelingprep.com/api/v3')
+                .get('/historical-chart/15min/AAPL?&apikey=d4266e03ec14c5ad6c6d8886d2956980')
+                .end((err, res) => {
+                    stock('AAPL').recent_histroy({'time_range':'15min'})
+                        .then((response) => {
+                            expect(res.body).to.eql(response);
+                            done();
+                        })
+                        .catch(done);
+                })
+        });
+
         it('\'aapl\' in lowercase should return valid data', (done) => {
             chai.request('https://financialmodelingprep.com/api/v3')
                 .get('/company/profile/AAPL')
