@@ -24,6 +24,20 @@ describe('.stock', () => {
 
         });
 
+        it('should return stock screener for NASDAQ', (done) => {
+            chai.request('https://financialmodelingprep.com/api/v3')
+                .get('/stock-screener?limit=20&exchange=NASDAQ&apikey=742caf19f789f502d3e5194544bf9243')
+                .end((err, res) => {
+                    stock().stock_screener({limit:20,exchange:'NASDAQ'})
+                        .then((response) => {
+                            expect(res.body).to.eql(response);
+                            done();
+                        })
+                        .catch(done);
+                })
+
+        });
+
         it('[\'AAPL,MSFT\'] stock should return valid data', (done) => {
             chai.request('https://financialmodelingprep.com/api/v3')
                 .get('/company/profile/AAPL,MSFT')
